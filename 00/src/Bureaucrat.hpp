@@ -16,7 +16,7 @@ class Bureaucrat {
 		Bureaucrat(const std::string name, int grade);
 		// конст. класса - инициализирует с вход.зн-ми
 		Bureaucrat(const Bureaucrat& other);
-		// конст. копиров.   берет ссылку на объект Б. инициализирует новый с теми же зн-ми (без иниц-ии)
+		// конст. копиров.  берет ссылку на объект Б. инициализирует новый с теми же зн-ми (без иниц-ии)
 		~Bureaucrat();
 		// дестр
 
@@ -29,8 +29,6 @@ class Bureaucrat {
 
 		void increaseGrade();
 		void decreaseGrade();
-
-		void signForm(Form &form);
 
 		class GradeTooLowException : public std::exception {
 			public:

@@ -1,6 +1,85 @@
 #include "Bureaucrat.hpp"
+#include <iostream>
+#include <cassert>
 
+// void testConstructor() {
+//     std::cout << "Testing constructor..." << std::endl;
+
+//     // Валидные случаи
+//     Bureaucrat b1("John", 1);
+//     assert(b1.getName() == "John" && b1.getGrade() == 1);
+    
+//     Bureaucrat b2("Alice", 150);
+//     assert(b2.getName() == "Alice" && b2.getGrade() == 150);
+
+//     // Исключения
+//     try {
+//         Bureaucrat b3("Bob", 0);
+//         assert(false); // Этот код не должен выполниться
+//     } catch (const Bureaucrat::GradeTooHighException& e) {
+//         std::cout << "Caught exception: " << e.what() << std::endl;
+//     }
+
+//     try {
+//         Bureaucrat b4("Charlie", 151);
+//         assert(false); // Этот код не должен выполниться
+//     } catch (const Bureaucrat::GradeTooLowException& e) {
+//         std::cout << "Caught exception: " << e.what() << std::endl;
+//     }
+// }
+
+// void testGradeMethods() {
+//     std::cout << "Testing grade methods..." << std::endl;
+
+//     Bureaucrat b("Test", 75);
+
+//     // Увеличение грейда
+//     b.increaseGrade();
+//     assert(b.getGrade() == 74);
+
+//     // Уменьшение грейда
+//     b.decreaseGrade();
+//     assert(b.getGrade() == 75);
+
+//     // Исключение при слишком высоком грейде
+//     Bureaucrat highGrade("High", 1);
+//     try {
+//         highGrade.increaseGrade();
+//         assert(false); // Этот код не должен выполниться
+//     } catch (const Bureaucrat::GradeTooHighException& e) {
+//         std::cout << "Caught exception: " << e.what() << std::endl;
+//     }
+
+//     // Исключение при слишком низком грейде
+//     Bureaucrat lowGrade("Low", 150);
+//     try {
+//         lowGrade.decreaseGrade();
+//         assert(false); // Этот код не должен выполниться
+//     } catch (const Bureaucrat::GradeTooLowException& e) {
+//         std::cout << "Caught exception: " << e.what() << std::endl;
+//     }
+// }
+
+// void testOutputOperator() {
+//     std::cout << "Testing output operator..." << std::endl;
+
+//     Bureaucrat b("OutputTest", 42);
+//     std::cout << b;
+//     // Проверьте вручную, что вывод соответствует формату: "OutputTest, bureaucrat grade 42"
+// }
+
+// int main() {
+//     testConstructor();
+//     testGradeMethods();
+//     testOutputOperator();
+
+//     std::cout << "All tests passed successfully!" << std::endl;
+//     return 0;
+// }
+
+// my tests
 int main() {
+	
     try {
         Bureaucrat bureaucrat1("Alice", 150); // Создание бюрократа с уровнем грейда 150
     } catch (const Bureaucrat::GradeTooHighException &e) {
@@ -31,30 +110,3 @@ int main() {
 
     return 0;
 }
-
-
-// int main() {
-//     try {
-// 		Bureaucrat bureaucrat("Alice", 150); // Ошибка: создаем слишком высокий грейд
-// 	} catch (Bureaucrat::GradeTooLowException& e) { // Обратите внимание на const перед Bureaucrat::GradeTooHighException
-// 		std::cerr << "GradeTooLowException caught: " << e.what() << std::endl;
-// 	}
-
-//     try {
-//         Bureaucrat bureaucrat("Bob", 0); // Ошибка: создаем слишком низкий грейд
-//     } catch (Bureaucrat::GradeTooHighException& e) {
-//         std::cerr << "GradeTooHighException caught: " << e.what() << std::endl;
-//     }
-
-//     try {
-//         Bureaucrat bureaucrat("Charlie", 5);
-//         std::cout << bureaucrat << std::endl;
-      
-//         bureaucrat.decreaseGrade(); // Ошибка: уменьшаем уровень грейда до недопустимого значения
-//         std::cout << bureaucrat << std::endl;
-//     } catch (Bureaucrat::GradeTooLowException& e) {
-//         std::cerr << "GradeTooLowException caught: " << e.what() << std::endl;
-//     }
-
-//     return 0;
-// }
