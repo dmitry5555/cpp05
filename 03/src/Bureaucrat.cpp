@@ -10,6 +10,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 	std::cout << "bureaucrat constructor passed" << std::endl;
 }
 
+Bureaucrat::Bureaucrat() {
+}
+
 Bureaucrat::~Bureaucrat() {
 }
 

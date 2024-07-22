@@ -19,6 +19,8 @@ class AForm {
 		AForm& operator=(const AForm& other);
 
 		virtual void	executeForm() const = 0;
+		// 0 - ее нет в базовом классе но должен определить в наследнике
+		// наследники должны переопределить (реализовать) этот метод
 
 
 	public:
@@ -31,8 +33,7 @@ class AForm {
 		void beSigned(Bureaucrat& bureaucrat);
 		void isSigned() const;
 		
-		virtual void execute(const Bureaucrat& executor) const;
-		// наследники должны переопределить (реализовать) этот метод
+		void execute(const Bureaucrat& executor) const;
 
 };
 
